@@ -33,6 +33,7 @@ try {
   console.log("database successfully connected");
 } catch (error) {
   console.log(error);
+  process.exit(1)
 }
 
 //routing

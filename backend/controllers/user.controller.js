@@ -9,18 +9,18 @@ export const signup = async (req, res) => {
 
     // Validate required fields
     if (!fullname || !email || !password || !confirmPassword) {
-      return res.status(400).json({ message: "Please fill all fields." });
+      return res.status(200).json({ message: "Please fill all fields." });
     }
 
     // Check if passwords match
     if (password !== confirmPassword) {
-      return res.status(400).json({ message: "Passwords do not match." });
+      return res.status(200).json({ message: "Passwords do not match." });
     }
 
     // Check if email already exists
     const emailExist = await User.findOne({ email });
     if (emailExist) {
-      return res.status(409).json({ message: "Email already exists." });
+      return res.status(200).json({ message: "Email already exists." });
     }
 
     // Hash the password before saving
@@ -38,7 +38,7 @@ export const signup = async (req, res) => {
     await newUser.save();
     if(newUser){
      const token = generateTokenAndSaveInCookie(newUser._id,res);
-      res.status(201).json({
+      res.status(200).json({
         message: "User created successfully",
         user: {
           _id: newUser._id,
@@ -65,7 +65,7 @@ export const Login = async (req,res)=>{
       const ismatch = await bcryptjs.compare(password,user.password);
       
       if(!user || !ismatch){
-        return res.status(302).json({message:"incorrect password "})
+        return res.status(200).json({message:"incorrect password "})
       }
 
       generateTokenAndSaveInCookie(user._id,res);
@@ -79,7 +79,7 @@ export const Login = async (req,res)=>{
 
     } catch (error) {
       console.error("Error during login:", error.message);
-      res.status(202).json({message:"there is some problem in login"})
+      res.status(500).json({message:"there is some problem in login"})
     }
     
 }
@@ -87,7 +87,7 @@ export const Login = async (req,res)=>{
 export const logout = async (req, res) => {
   try {
     res.clearCookie("jwt");
-    res.status(201).json({ message: "User logged out successfully" });
+    res.status(200).json({ message: "User logged out successfully" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal server error" });
@@ -103,8 +103,9 @@ export const allUsers = async (req, res) => {
     const filteredUsers = await User.find({
        _id: { $ne: loggedInUser },
     }).select("-password");
-    res.status(201).json(filteredUsers);
+    res.status(200).json(filteredUsers);
   } catch (error) {
-    console.log("Error in allUsers Controller: " + error);
+    res.status(400).json(error);
+    //console.log("Error in allUsers Controller: " + error);
   }
 };
