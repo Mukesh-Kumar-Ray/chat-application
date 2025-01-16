@@ -5,7 +5,7 @@ import userRouter from "./routers/user.router.js";
 import messageRouter from "./routers/message.router.js"
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import path from "path"
+//import path from "path"
 import {app,server} from "./socketIO/server.js"
 
 dotenv.config();
