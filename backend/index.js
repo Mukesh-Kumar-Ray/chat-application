@@ -26,7 +26,7 @@ app.use(cors(
   
 
 const port = process.env.PORT;
-const mongodb_url = process.env.MongoDB_URL;
+const mongodb_url = process.env.MONGODB_URL;
 
 try {
   mongoose.connect(mongodb_url);
