@@ -47,7 +47,7 @@ export const Login = async (req,res)=>{
       const ismatch = await bcryptjs.compare(password,user.password);
       
       if(!user || !ismatch){
-        return res.status(200).json({message:"incorrect password "})
+        return res.status(400).json({message:"incorrect password "})
       }
 
       generateTokenAndSaveInCookie(user._id,res);
@@ -87,7 +87,7 @@ export const allUsers = async (req, res) => {
     }).select("-password");
     res.status(200).json(filteredUsers);
   } catch (error) {
-    res.status(400).json(error);
+    res.status(500).json(error);
     //console.log("Error in allUsers Controller: " + error);
   }
 };

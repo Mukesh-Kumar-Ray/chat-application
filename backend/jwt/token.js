@@ -6,9 +6,9 @@ const generateTokenAndSaveInCookie = (userid, res) => {
   });
   
   res.cookie("jwt", token, {
-    httpOnly: true,
-    secure: true, 
-    sameSite: "strict",
+    httpOnly: true, // Prevents JavaScript access
+    secure: process.env.NODE_ENV === "production", // Secure in production
+    sameSite: "Strict",
     // path:"/"
   });
  
