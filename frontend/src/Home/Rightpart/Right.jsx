@@ -15,7 +15,7 @@ const Right = () => {
     <div className="w-full bg-slate-900 text-gray-300">
       <div>
         {!selectedConversation ? (
-          <NoChatSelected />
+          <h1>This is me</h1>
         ) : (
           <>
             <Chatuser />

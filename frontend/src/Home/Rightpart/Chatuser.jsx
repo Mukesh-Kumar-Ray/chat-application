@@ -9,7 +9,7 @@ function Chatuser() {
   //console.log(selectedConversation);
 
   const { onlineUsers } = useSocketContext();
-  console.log(onlineUsers);
+  //console.log(onlineUsers);
   const getOnlineUsersStatus = (userId) => {
     return onlineUsers.includes(userId) ? "Online" : "Offline";
   };
