@@ -6,8 +6,14 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
     const initialUserState = Cookies.get("jwt") || localStorage.getItem("ChatApp");
-    const [authUser, setAuthUser] = useState(initialUserState ? JSON.parse(initialUserState) : undefined);
-    console.log(authUser);
+    const [authUser, setAuthUser] = useState(() => {
+      try {
+        return initialUserState ? JSON.parse(initialUserState) : undefined;
+      } catch (error) {
+        console.error("Error parsing initialUserState:", error);
+        return undefined;
+      }
+    });
   return (
     <AuthContext.Provider value={[authUser, setAuthUser]}>
        {children}

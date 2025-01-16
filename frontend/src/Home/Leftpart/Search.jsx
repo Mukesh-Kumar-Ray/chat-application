@@ -7,7 +7,7 @@ function Search() {
   const [search, setSearch] = useState("");
   const [allUsers] = useGetAllUsers();
   const { setSelectedConversation } = useConversation();
-  console.log(allUsers);
+  //console.log(allUsers);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!search) return;
@@ -18,7 +18,9 @@ function Search() {
       setSelectedConversation(conversation);
       setSearch("");
     } else {
-      console.log(error)
+      res.status(404).json({ 
+        message: "No conversation found." 
+      });
     }
   };
   return (

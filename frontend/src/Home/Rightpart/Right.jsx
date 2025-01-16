@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Chatuser from "./Chatuser.jsx";
 import Messages from "./Messages.jsx";
 import Typesend from "./Typesend.jsx";
-import { useAuth } from "../../Context/authProvider.jsx";
+import { AuthProvider, useAuth } from "../../Context/authProvider.jsx";
 import useConversation from "../../../zustand/useConversation.js";
 
 const Right = () => {

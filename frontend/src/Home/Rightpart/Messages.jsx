@@ -5,7 +5,7 @@ import useGetSocketMessage from "../../Context/useGetSocketMessage.jsx";
 import Loading from "../../Components/Loading.jsx";
 function Messages() {
   const { loading, messages } = useGetMessage();
-  console.log(messages);
+  //console.log(messages);
   useGetSocketMessage();
   const lastMsgRef = useRef();
   useEffect(() => {
