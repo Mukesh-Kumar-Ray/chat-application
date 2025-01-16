@@ -4,56 +4,38 @@ import generateTokenAndSaveInCookie from "../jwt/token.js"
 
 export const signup = async (req, res) => {
   try {
-    // console.log(req.body)
     const { fullname, email, password, confirmPassword } = req.body;
 
-    // Validate required fields
     if (!fullname || !email || !password || !confirmPassword) {
-      return res.status(200).json({ message: "Please fill all fields." });
+      return res.status(400).json({ message: "Please fill all fields." });
     }
 
-    // Check if passwords match
     if (password !== confirmPassword) {
-      return res.status(200).json({ message: "Passwords do not match." });
+      return res.status(400).json({ message: "Passwords do not match." });
     }
 
-    // Check if email already exists
     const emailExist = await User.findOne({ email });
     if (emailExist) {
-      return res.status(200).json({ message: "Email already exists." });
+      return res.status(409).json({ message: "Email already exists." });
     }
 
-    // Hash the password before saving
     const hashedPassword = await bcryptjs.hash(password, 10);
+    const newUser = new User({ fullname, email, password: hashedPassword });
 
-    // Create a new user
-    const newUser = new User({
-      fullname: fullname,
-      email: email,
-      password: hashedPassword, // Save the hashed password
-    });
-
-    // Save the user to the database
-    
     await newUser.save();
-    if(newUser){
-     const token = generateTokenAndSaveInCookie(newUser._id,res);
-      res.status(200).json({
-        message: "User created successfully",
-        user: {
-          _id: newUser._id,
-          fullname: newUser.fullname,
-          email: newUser.email,
-        },
-        token,
-      });
-    }
-    
+    const token = generateTokenAndSaveInCookie(newUser._id, res);
+
+    res.status(201).json({
+      message: "User created successfully",
+      user: { _id: newUser._id, fullname: newUser.fullname, email: newUser.email },
+      token,
+    });
   } catch (error) {
     console.error("Error during signup:", error.message);
-    res.status(500).json({ message: "Internal server error." });
+    res.status(500).json({ message: "Internal server error.", error: error.message });
   }
 };
+
 
 //login 
 
