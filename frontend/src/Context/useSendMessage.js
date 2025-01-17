@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import useConversation from "../../zustand/useConversation.js";
+import UseConversation from "../../zustand/useConversation.js";
 import axios from "axios";
-const useSendMessage = () => {
+const UseSendMessage = () => {
   const [loading, setLoading] = useState(false);
-  const { messages, setMessage, selectedConversation } = useConversation();
+  const { messages, setMessage, selectedConversation } = UseConversation();
   //console.log(selectedConversation);
   const sendMessages = async (message) => {
     setLoading(true);
@@ -22,4 +22,4 @@ const useSendMessage = () => {
   return { loading, sendMessages };
 };
 
-export default useSendMessage;
+export default UseSendMessage;

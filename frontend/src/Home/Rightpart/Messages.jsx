@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import Message from "./Message.jsx";
-import useGetMessage from "../../Context/useGetMessage.js";
-import useGetSocketMessage from "../../Context/useGetSocketMessage.jsx";
+import UseGetMessage from "../../Context/useGetMessage.js";
+import UseGetSocketMessage from "../../Context/useGetSocketMessage.jsx";
 import Loading from "../../Components/Loading.jsx";
 function Messages() {
-  const { loading, messages } = useGetMessage();
+  const { loading, messages } = UseGetMessage();
   //console.log(messages);
-  useGetSocketMessage();
+  UseGetSocketMessage();
   const lastMsgRef = useRef();
   useEffect(() => {
     setTimeout(() => {

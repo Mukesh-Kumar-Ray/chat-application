@@ -1,14 +1,14 @@
 import React from "react";
 import { CiMenuFries } from "react-icons/ci";
-import useConversation from "../../../zustand/useConversation.js";
-import { useSocketContext } from "../../Context/SocketContext.jsx";
+import UseConversation from "../../../zustand/useConversation.js";
+import { UseSocketContext } from "../../Context/SocketContext.jsx";
 
 function Chatuser() {
-  const { selectedConversation } = useConversation();
+  const { selectedConversation } = UseConversation();
 
   //console.log(selectedConversation);
 
-  const { onlineUsers } = useSocketContext();
+  const { onlineUsers } = UseSocketContext();
   //console.log(onlineUsers);
   const getOnlineUsersStatus = (userId) => {
     return onlineUsers.includes(userId) ? "Online" : "Offline";

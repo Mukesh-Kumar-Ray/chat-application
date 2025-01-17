@@ -2,10 +2,10 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { NavLink } from 'react-router';
-import { useAuth } from "../Context/AuthProvider.jsx";
+import { UseAuth } from "../Context/authProvider.jsx";
 
 const Signup = () => {
-  const [authUser, setAuthUser] = useAuth();
+  const [authUser, setAuthUser] = UseAuth();
   const form =useForm();
   const {register, handleSubmit ,formState:{errors} }=form;
 

@@ -1,12 +1,12 @@
 import React,{useState} from 'react'
 import { FaSearch } from "react-icons/fa";
-import useGetAllUsers from "../../Context/useGetAllUsers.jsx";
-import useConversation from "../../../zustand/useConversation.js";
+import UseGetAllUsers from "../../Context/useGetAllUsers.jsx";
+import UseConversation from "../../../zustand/useConversation.js";
 
 function Search() {
   const [search, setSearch] = useState("");
-  const [allUsers] = useGetAllUsers();
-  const { setSelectedConversation } = useConversation();
+  const [allUsers] = UseGetAllUsers();
+  const { setSelectedConversation } = UseConversation();
   //console.log(allUsers);
   const handleSubmit = (e) => {
     e.preventDefault();

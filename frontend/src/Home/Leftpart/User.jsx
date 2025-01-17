@@ -1,12 +1,12 @@
 import React from "react";
-import useConversation from "../../../zustand/useConversation.js";
-import { useSocketContext } from "../../Context/SocketContext.jsx";
+import UseConversation from "../../../zustand/useConversation.js";
+import { UseSocketContext } from "../../Context/SocketContext.jsx";
 
 function User({ ele }) {
   //console.log({ele});
-  const { selectedConversation, setSelectedConversation } = useConversation();
+  const { selectedConversation, setSelectedConversation } = UseConversation();
   const isSelected = selectedConversation?._id === ele._id;
-  const { socket, onlineUsers } = useSocketContext();
+  const { socket, onlineUsers } = UseSocketContext();
   const isOnline = onlineUsers.includes(ele._id);
 
   //console.log(isOnline);

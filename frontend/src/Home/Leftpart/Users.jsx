@@ -1,9 +1,9 @@
 import React from 'react'
 import User from "./User"
-import useGetAllUsers from "../../Context/useGetAllUsers"
+import UseGetAllUsers from "../../Context/useGetAllUsers"
 function Users() {
   //console.log("mukesh")
-  const [allUsers,loading] = useGetAllUsers();
+  const [allUsers,loading] = UseGetAllUsers();
     //console.log(allUsers);
   return (
     <section className="bg-slate-900 rounded-md shadow-md">

@@ -4,10 +4,10 @@ import Right from "./Home/Rightpart/Right"
 import { Navigate,Route,Routes } from 'react-router'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
-import { useAuth } from "./Context/AuthProvider";
+import { UseAuth } from "./Context/authProvider";
 
 const App = () => {
-  const [authUser, setAuthUser] = useAuth();
+  const [authUser, setAuthUser] = UseAuth();
   //console.log(authUser );
   return (
     <>

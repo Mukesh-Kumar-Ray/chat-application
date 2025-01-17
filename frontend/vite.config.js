@@ -12,12 +12,7 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
-  },
-  resolve: {
-    alias: {
-      '@context': path.resolve(__dirname, 'src/Context'),
-    },
-  },
+  }
 })
 
 

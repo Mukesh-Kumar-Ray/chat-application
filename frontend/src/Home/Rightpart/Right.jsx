@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import Chatuser from "./Chatuser.jsx";
 import Messages from "./Messages.jsx";
 import Typesend from "./Typesend.jsx";
-import { AuthProvider, useAuth } from "../../Context/authProvider.jsx";
-import useConversation from "../../../zustand/useConversation.js";
+import { AuthProvider, UseAuth } from "../../Context/authProvider.jsx";
+import UseConversation from "../../../zustand/useConversation.js";
 
 const Right = () => {
-  const { selectedConversation, setSelectedConversation } = useConversation();
+  const { selectedConversation, setSelectedConversation } = UseConversation();
   useEffect(() => {
     return setSelectedConversation(null);
   }, [setSelectedConversation]);
@@ -36,7 +36,7 @@ const Right = () => {
 export default Right;
 
 const NoChatSelected = () => {
-  const [authUser] = useAuth();
+  const [authUser] = UseAuth();
   console.log(authUser);
   return (
     <>

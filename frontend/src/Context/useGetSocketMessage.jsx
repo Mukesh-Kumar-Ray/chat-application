@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { useSocketContext } from "./SocketContext.jsx";
-import useConversation from "../../zustand/useConversation.js";
+import { UseSocketContext } from "./SocketContext.jsx";
+import UseConversation from "../../zustand/useConversation.js";
 import sound from "../assets/soundpop.mp3";
-const useGetSocketMessage = () => {
-  const { socket } = useSocketContext();
-  const { messages, setMessage } = useConversation();
+const UseGetSocketMessage = () => {
+  const { socket } = UseSocketContext();
+  const { messages, setMessage } = UseConversation();
 
   useEffect(() => {
     socket.on("newMessage", (newMessage) => {
@@ -17,4 +17,4 @@ const useGetSocketMessage = () => {
     };
   }, [socket, messages, setMessage]);
 };
-export default useGetSocketMessage;
+export default UseGetSocketMessage;
