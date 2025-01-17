@@ -1,5 +1,5 @@
 import React from "react";
-import UseConversation from "../../../zustand/UseConversation.js";
+import UseConversation from "../../Zustand/UseConversation.js";
 import { UseSocketContext } from "../../Context/SocketContext.jsx";
 
 function User({ ele }) {
