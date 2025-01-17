@@ -1,6 +1,6 @@
 import React from "react";
 
-function Message({ message }) {
+const Message = ({ message }) => {
   //console.log(message);
   const authUser = JSON.parse(localStorage.getItem("ChatApp"));
   //console.log(authUser);

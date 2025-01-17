@@ -3,7 +3,7 @@ import Message from "./Message.jsx";
 import UseGetMessage from "../../Context/UseGetMessage.js";
 import UseGetSocketMessage from "../../Context/UseGetSocketMessage.js";
 import Loading from "../../Components/Loading.jsx";
-function Messages() {
+const Messages =()=> {
   const { loading, messages } = UseGetMessage();
   //console.log(messages);
   UseGetSocketMessage();

@@ -2,7 +2,7 @@ import React from "react";
 import UseConversation from "../../Zustand/UseConversation.js";
 import { UseSocketContext } from "../../Context/SocketContext.jsx";
 
-function User({ ele }) {
+const User=({ ele })=> {
   //console.log({ele});
   const { selectedConversation, setSelectedConversation } = UseConversation();
   const isSelected = selectedConversation?._id === ele._id;

@@ -4,7 +4,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 
-function Logout() {
+const Logout=()=> {
   const [loading, setLoading] = useState(false);
 
   const handleLogout = async () => {

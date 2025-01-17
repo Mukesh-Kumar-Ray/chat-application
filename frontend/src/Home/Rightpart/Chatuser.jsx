@@ -3,7 +3,7 @@ import { CiMenuFries } from "react-icons/ci";
 import UseConversation from "../../Zustand/UseConversation.js";
 import { UseSocketContext } from "../../Context/SocketContext.jsx";
 
-function Chatuser() {
+const Chatuser = () =>{
   const { selectedConversation } = UseConversation();
 
   //console.log(selectedConversation);

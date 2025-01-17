@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import UseGetAllUsers from "../../Context/UseGetAllUsers.js";
 import UseConversation from "../../Zustand/UseConversation.js";
 
-function Search() {
+const Search =() => {
   const [search, setSearch] = useState("");
   const [allUsers] = UseGetAllUsers();
   const { setSelectedConversation } = UseConversation();
