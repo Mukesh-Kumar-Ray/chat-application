@@ -20,6 +20,6 @@ const UseSendMessage = () => {
     }
   };
   return { loading, sendMessages };
-}
+};
 
 export default UseSendMessage;

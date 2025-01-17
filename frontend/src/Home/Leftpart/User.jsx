@@ -44,6 +44,6 @@ const User=({ ele })=> {
       </div>
     </div>
   );
-}
+};
 
 export default User;

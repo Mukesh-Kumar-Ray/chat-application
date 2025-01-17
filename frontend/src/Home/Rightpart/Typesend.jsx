@@ -35,6 +35,6 @@ const Typesend =()=> {
 </form>
 
   )
-}
+};
 
 export default Typesend;

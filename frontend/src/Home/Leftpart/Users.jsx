@@ -24,6 +24,6 @@ const Users = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Users;

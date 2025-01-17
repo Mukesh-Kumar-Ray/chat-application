@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Message from "./Message.jsx";
-import UseGetMessage from "../../Context/UseGetMessage.js";
+import UseGetMessage from "../../Context/UseGetSocketMessage.js";
 import UseGetSocketMessage from "../../Context/UseGetSocketMessage.js";
 import Loading from "../../Components/Loading.jsx";
 const Messages =()=> {
@@ -43,6 +43,6 @@ const Messages =()=> {
       )}
     </div>
   );
-}
+};
 
 export default Messages;

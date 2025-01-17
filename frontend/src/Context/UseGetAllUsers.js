@@ -24,6 +24,6 @@ const UseGetAllUsers = () => {
     getUsers();
   }, []);
   return [allUsers, loading];
-}
+};
 
 export default UseGetAllUsers;

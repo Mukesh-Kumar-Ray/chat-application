@@ -31,11 +31,9 @@ const Right = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Right;
-
-const NoChatSelected = () => {
+export const NoChatSelected = () => {
   const [authUser] = UseAuth();
   console.log(authUser);
   return (
@@ -62,3 +60,7 @@ const NoChatSelected = () => {
     </>
   );
 };
+
+export default Right;
+
+
