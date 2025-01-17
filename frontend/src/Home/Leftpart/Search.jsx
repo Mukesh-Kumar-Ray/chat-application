@@ -1,6 +1,6 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import UseGetAllUsers from "../../Context/useGetAllUsers.jsx";
+import UseGetAllUsers from "../../Context/UseGetAllUsers.jsx";
 import UseConversation from "../../../zustand/useConversation.js";
 
 function Search() {
@@ -18,42 +18,41 @@ function Search() {
       setSelectedConversation(conversation);
       setSearch("");
     } else {
-      res.status(404).json({ 
-        message: "No conversation found." 
+      res.status(404).json({
+        message: "No conversation found.",
       });
     }
   };
   return (
     <div className="h-[10vh] flex items-center justify-center bg-transparent">
-  <div className="w-full max-w-lg px-4">
-    <form onSubmit={handleSubmit}>
-      <div className="flex items-center space-x-3">
-        {/* Search Input */}
-        <label className="flex items-center w-full gap-2 border border-gray-700 bg-slate-900 rounded-lg px-4 py-2 focus-within:border-blue-500">
-          <FaSearch className="text-gray-400 text-lg" />
-          <input
-            type="text"
-            className="w-full bg-transparent outline-none text-white placeholder-gray-500"
-            placeholder="Search..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </label>
-        
-        {/* Search Button */}
-        <button
-          type="submit"
-          className="flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 duration-300 rounded-lg p-3 shadow-md"
-          aria-label="Search"
-        >
-          <FaSearch className="text-2xl" />
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
+      <div className="w-full max-w-lg px-4">
+        <form onSubmit={handleSubmit}>
+          <div className="flex items-center space-x-3">
+            {/* Search Input */}
+            <label className="flex items-center w-full gap-2 border border-gray-700 bg-slate-900 rounded-lg px-4 py-2 focus-within:border-blue-500">
+              <FaSearch className="text-gray-400 text-lg" />
+              <input
+                type="text"
+                className="w-full bg-transparent outline-none text-white placeholder-gray-500"
+                placeholder="Search..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </label>
 
-  )
+            {/* Search Button */}
+            <button
+              type="submit"
+              className="flex items-center justify-center text-white bg-blue-600 hover:bg-blue-700 duration-300 rounded-lg p-3 shadow-md"
+              aria-label="Search"
+            >
+              <FaSearch className="text-2xl" />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }
 
-export default Search
+export default Search;
