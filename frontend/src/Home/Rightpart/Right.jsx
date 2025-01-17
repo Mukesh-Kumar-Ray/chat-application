@@ -3,7 +3,7 @@ import Chatuser from "./Chatuser.jsx";
 import Messages from "./Messages.jsx";
 import Typesend from "./Typesend.jsx";
 import { AuthProvider, UseAuth } from "../../Context/AuthProvider.jsx";
-import UseConversation from "../../../Zustand/UseConversation.js";
+import UseConversation from "../../../zustand/UseConversation.js";
 
 const Right = () => {
   const { selectedConversation, setSelectedConversation } = UseConversation();

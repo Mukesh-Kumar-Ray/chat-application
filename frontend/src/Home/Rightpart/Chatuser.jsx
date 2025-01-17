@@ -1,6 +1,6 @@
 import React from "react";
 import { CiMenuFries } from "react-icons/ci";
-import UseConversation from "../../../Zustand/UseConversation.js";
+import UseConversation from "../../../zustand/UseConversation.js";
 import { UseSocketContext } from "../../Context/SocketContext.jsx";
 
 function Chatuser() {
