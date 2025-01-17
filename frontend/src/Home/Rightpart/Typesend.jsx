@@ -37,4 +37,4 @@ const Typesend =()=> {
   )
 }
 
-export default Typesend
+export default Typesend;
