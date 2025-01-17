@@ -16,5 +16,5 @@ const UseGetSocketMessage = () => {
       socket.off("newMessage");
     };
   }, [socket, messages, setMessage]);
-};
+}
 export default UseGetSocketMessage;

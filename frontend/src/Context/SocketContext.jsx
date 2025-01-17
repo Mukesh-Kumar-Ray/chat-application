@@ -37,4 +37,4 @@ export const SocketProvider = ({ children }) => {
       {children}
     </socketContext.Provider>
   );
-};
+}
