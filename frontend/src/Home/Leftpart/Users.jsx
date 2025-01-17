@@ -1,6 +1,6 @@
 import React from "react";
 import User from "./User";
-import UseGetAllUsers from "../../Context/UseGetAllUsers";
+import UseGetAllUsers from "../../Context/UseGetAllUsers.jsx";
 function Users() {
   //console.log("mukesh")
   const [allUsers, loading] = UseGetAllUsers();
