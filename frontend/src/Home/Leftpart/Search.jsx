@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import UseGetAllUsers from "../../Context/UseGetAllUsers.jsx";
+import UseGetAllUsers from "../../Context/UseGetAllUsers.js";
 import UseConversation from "../../Zustand/UseConversation.js";
 
 function Search() {
