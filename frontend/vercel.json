@@ -1,0 +1,5 @@
+{
+    "rewrites": [
+      { "source": "/(.*)", "destination": "https://chat-application-ten-sooty.vercel.app/" }
+    ]
+}
