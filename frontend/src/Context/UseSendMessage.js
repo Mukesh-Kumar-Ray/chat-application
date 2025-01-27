@@ -8,8 +8,7 @@ const UseSendMessage = () => {
   const sendMessages = async (message) => {
     setLoading(true);
     try {
-      const res = await axios.post(
-        `/api/message/send/${selectedConversation._id}`,
+      const res = await axios.post(`${import.meta.env.VITE_SEVER_API}/api/message/send/${selectedConversation._id}`,
         { message }
       );
       setMessage([...messages, res.data]);

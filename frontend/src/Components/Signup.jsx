@@ -26,7 +26,7 @@ const Signup = () => {
     // console.log(userInfo)
 
     try {
-      const response = await axios.post("/api/user/Signup", userInfo);
+      const response = await axios.post(`${import.meta.env.VITE_SEVER_API}/api/user/Signup`, userInfo);
       //console.log(response.data);
       if (response.data) {
         alert("Signup successful");

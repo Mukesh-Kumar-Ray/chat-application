@@ -10,7 +10,7 @@ const Logout=()=> {
   const handleLogout = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("/api/user/Logout");
+      const response = await axios.post(`${import.meta.env.VITE_SEVER_API}/api/user/Logout`);
       localStorage.removeItem("ChatApp");
       Cookies.remove("jwt");
       setLoading(false);

@@ -11,9 +11,7 @@ const UseGetMessage = () => {
       if (selectedConversation && selectedConversation._id) {
         try {
           //console.log("mukesh1")
-          const response = await axios.get(
-            `/api/message/get/${selectedConversation._id}`
-          );
+          const response = await axios.get(`${import.meta.env.VITE_SEVER_API}/api/message/get/${selectedConversation._id}`);
           //console.log("mukesh2")
           //console.log(response);
           setMessage(response.data);
