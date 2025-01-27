@@ -17,7 +17,7 @@ export const SocketProvider = ({ children }) => {
     if (authUser) {
       const socket = io(import.meta.env.VITE_SEVER_API , {
         query: {
-          userId: authUser.user.id, /// sambhal ke bhai ._id ya id
+          userId: authUser.user._id, /// sambhal ke bhai ._id ya id
         },
       });
       setSocket(socket);

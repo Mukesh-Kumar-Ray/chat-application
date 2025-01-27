@@ -12,8 +12,7 @@ const UseGetAllUsers = () => {
         const response = await axios.get(import.meta.env.VITE_SEVER_API + "/api/user/alluser", {
           credentials: "include",
           headers: {
-            'Authorization' : `Bearer ${token}`,
-            'Content-Type': 'application/json'
+            'Authorization' : `Bearer ${token}`
           },
         });
         setAllUsers(response.data);
