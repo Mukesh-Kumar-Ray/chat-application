@@ -3,6 +3,7 @@ import { UseAuth } from "./AuthProvider";
 import io from "socket.io-client";
 const socketContext = createContext();
 
+//it is a hook.
 export const UseSocketContext = () => {
   return useContext(socketContext);
 };
@@ -14,11 +15,10 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io(import.meta.env.VITE_SEVER_API, {
+      const socket = io(import.meta.env.VITE_SEVER_API , {
         query: {
-          userId: authUser.user._id,
+          userId: authUser.user._id, /// sambhal ke bhai ._id ya id
         },
-        withCredentials: true,
       });
       setSocket(socket);
       socket.on("getOnlineUsers", (users) => {
