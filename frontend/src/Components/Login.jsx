@@ -16,7 +16,7 @@ const Login = () => {
       //console.log(userInfo);
 
       try {
-        const response = await axios.post(`${import.meta.env.VITE_SEVER_API}/api/user/Login`, userInfo);
+        const response = await axios.post(import.meta.env.VITE_SEVER_API + "/api/user/Login", userInfo);
         //console.log(response);
         localStorage.setItem("ChatApp", JSON.stringify(response.data));
         window.location.reload();
