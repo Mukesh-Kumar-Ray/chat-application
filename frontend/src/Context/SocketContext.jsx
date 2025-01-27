@@ -15,7 +15,7 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (authUser) {
-      const socket = io("http://localhost:4001", {
+      const socket = io(import.meta.env.VITE_SEVER_API , {
         query: {
           userId: authUser.user.id, /// sambhal ke bhai ._id ya id
         },
