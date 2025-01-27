@@ -22,13 +22,9 @@ app.use(cors(
   //   methods: ["POST","GET"],
   //   credentials:true
   // }
-
-  {
-    credentials: true // Allow sending cookies
-  }
 ));
 
-app.use(urlencoded({ extended: true }));
+//app.use(urlencoded({ extended: true }));
 
 const port = process.env.PORT;
 const mongodb_url = process.env.MONGODB_URL;
