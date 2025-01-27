@@ -9,10 +9,12 @@ const UseGetAllUsers = () => {
       setLoading(true);
       try {
         const token = Cookies.get("jwt");
+        //console.log("token ", token);
         const response = await axios.get(import.meta.env.VITE_SEVER_API + "/api/user/alluser", {
           credentials: "include",
           headers: {
-            'Authorization' : `Bearer ${token}`
+            "Authorization" : `Bearer ${token}`,
+            "Content-Type": "application/json",
           },
         });
         setAllUsers(response.data);
