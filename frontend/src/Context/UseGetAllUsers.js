@@ -8,7 +8,7 @@ const UseGetAllUsers = () => {
     const getUsers = async () => {
       setLoading(true);
       try {
-        const token = Cookies.get("jwt");
+        const token = Cookies.get("perf_dv6Tr4n");
         //console.log("token ", token);
         const response = await axios.get(import.meta.env.VITE_SEVER_API + "/api/user/alluser", {
           credentials: "include",
