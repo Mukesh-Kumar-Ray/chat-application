@@ -16,13 +16,11 @@ dotenv.config();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors(
-  // {
-  //   origin:[],
-  //   methods: ["POST","GET"],
-  //   credentials:true
-  // }
-));
+app.use(cors({
+  origin: "https://chat-application-ten-sooty.vercel.app",
+  methods: ["POST", "GET", "PUT", "DELETE"],
+  credentials: true
+}));
 
 //app.use(urlencoded({ extended: true }));
 
